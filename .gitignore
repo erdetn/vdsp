@@ -1,0 +1,12 @@
+# Ignore all
+*
+playground/*.c
+playground/*.h
+*.c
+*.h
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
