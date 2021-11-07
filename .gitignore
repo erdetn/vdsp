@@ -2,11 +2,11 @@
 *
 playground/*.c
 playground/*.h
-*.c
-*.h
 
 # Unignore all with extensions
 !*.*
+*.c
+*.h
 
 # Unignore all dirs
 !*/
