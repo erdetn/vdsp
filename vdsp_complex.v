@@ -6,12 +6,14 @@ module vdsp
 // double = f64
 
 #define to_liquid_float_complex(x) (liquid_float_complex)(*(liquid_float_complex *)&x)
+#define to_liquid_float_complex_ptr(x) ((liquid_float_complex *)&x)
 #define from_liquid_float_complex(x) (vdsp__FloatComplex)(*(vdsp__FloatComplex *)&x)
 
 #define to_liquid_double_complex(x) (liquid_double_complex)(*(liquid_double_complex *)&x)
 #define from_liquid_double_complex(x) (vdsp__DoubleComplex)(*(vdsp__DoubleComplex *)&x)
 
 fn C.to_liquid_float_complex(x FloatComplex) C.liquid_float_complex
+fn C.to_liquid_float_complex_ptr(x FloatComplex) &C.liquid_float_complex
 fn C.from_liquid_float_complex(x C.liquid_float_complex) FloatComplex
 
 fn C.to_liquid_double_complex(x DoubleComplex) C.liquid_double_complex
