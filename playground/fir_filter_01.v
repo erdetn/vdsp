@@ -26,11 +26,15 @@ fn main() {
 		return
 	}
 
+	fir_filter.set_scale(vdsp.FloatComplex{0.5, 0.5})
+
 	fir_filter.print()
 	
 	x := sig_generator(2.1, 1.4, 1000)
 	mut y := vdsp.FloatComplex{0.0, 0.0}
 	mut index := int(0)
+
+	fir_filter.write(x)
 
 	for ix in x {
 		fir_filter.push(ix)
