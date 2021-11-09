@@ -103,13 +103,13 @@ pub fn (this FirFilter)reset() {
 }
 
 fn C.firfilt_crcf_push(C.firfilt_crcf, C.liquid_float_complex)
-pub fn (this FirFilter)push(sample FloatComplex) {
+pub fn (this FirFilter)push(sample ComplexF32) {
 	z := C.to_liquid_float_complex(sample)
 	C.firfilt_crcf_push(this.fobj, z)
 }
 
 fn C.firfilt_crcf_execute(C.firfilt_crcf, &C.liquid_float_complex)
-pub fn (this FirFilter)execute() FloatComplex {
+pub fn (this FirFilter)execute() ComplexF32 {
 	z1 := float_complex(0.0, 0.0)
 	z2 := C.to_liquid_float_complex(z1)
 	unsafe {
@@ -125,7 +125,7 @@ pub fn (this FirFilter)length() int {
 }
 
 fn C.firfilt_crcf_freqresponse(q C.firfilt_crcf, fc f32, h &C.liquid_float_complex)
-pub fn (this FirFilter)frequency_response(fc f32) FloatComplex {
+pub fn (this FirFilter)frequency_response(fc f32) ComplexF32 {
 	mut h_freq := float_complex(0.0, 0.0)
 	h1 := C.to_liquid_float_complex(h_freq)
 	unsafe {
@@ -143,12 +143,12 @@ pub fn (this FirFilter)group_delay(fc f32) f32 {
 fn C.firfilt_crcf_set_scale(q C.firfilt_crcf, scale C.liquid_float_complex)
 fn C.firfilt_crcf_get_scale(q C.firfilt_crcf, scale &C.liquid_float_complex)
 
-pub fn (this FirFilter)set_scale(scale FloatComplex) {
+pub fn (this FirFilter)set_scale(scale ComplexF32) {
 	s0 := C.to_liquid_float_complex(scale)
 	C.firfilt_crcf_set_scale(this.fobj, s0)
 }
 
-pub fn (this FirFilter)scale() FloatComplex {
+pub fn (this FirFilter)scale() ComplexF32 {
 	z0 := float_complex(f32(0.0), f32(0.0))
 	z1 := C.to_liquid_float_complex(z0)
 	unsafe {
@@ -159,7 +159,7 @@ pub fn (this FirFilter)scale() FloatComplex {
 }
 
 fn C.firfilt_crcf_write(q C.firfilt_crcf, x &C.liquid_float_complex, n u32)
-pub fn (this FirFilter)write(samples []FloatComplex) {
+pub fn (this FirFilter)write(samples []ComplexF32) {
 	if samples.len == 0 {
 		return
 	}
