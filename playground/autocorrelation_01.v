@@ -34,5 +34,8 @@ fn main() {
 		index += 1
 	}
 
+	ac_energy := ac.energy()
+	println('energy: ${ac_energy}')
+
 	ac.destroy()
 }
