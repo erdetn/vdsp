@@ -2,29 +2,29 @@
 
 module main
 
-import vdsp
+import vldsp
 import math
 
-fn sig_generator(a f32, b f32, samples int) []vdsp.ComplexF32 {
-	mut sig := []vdsp.ComplexF32{}
+fn sig_generator(a f32, b f32, samples int) []vldsp.ComplexF32 {
+	mut sig := []vldsp.ComplexF32{}
 	mut sample := f32(0)
 
 	for i in 1 .. samples {
 		sample  = f32(a*math.sin(f32(i)*10*math.pi))
 		sample += f32(b*math.sin(f32(i)*math.pi/3))
-		sig << vdsp.float_complex(sample, f32(0))
+		sig << vldsp.float_complex(sample, f32(0))
 	}
 	return sig
 }
 
 
 fn main() {
-	mut iir_filter := vdsp.new_iir_differentiator()
+	mut iir_filter := vldsp.new_iir_differentiator()
 
 	iir_filter.print()
 	
 	x := sig_generator(2.1, 1.4, 1000)
-	mut y := vdsp.ComplexF32{0.0, 0.0}
+	mut y := vldsp.ComplexF32{0.0, 0.0}
 	mut index := int(0)
 
 	for ix in x {

@@ -1,16 +1,16 @@
 // Copyright(C) 2021 Erdet Nasufi. All rights reserved. MIT License.
 
-module vdsp
+module vldsp
 
 // float  = f32
 // double = f64
 
 #define to_liquid_float_complex(x) (liquid_float_complex)(*(liquid_float_complex *)&x)
 #define to_liquid_float_complex_ptr(x) ((liquid_float_complex *)&x)
-#define from_liquid_float_complex(x) (vdsp__ComplexF32)(*(vdsp__ComplexF32 *)&x)
+#define from_liquid_float_complex(x) (vldsp__ComplexF32)(*(vldsp__ComplexF32 *)&x)
 
 #define to_liquid_double_complex(x) (liquid_double_complex)(*(liquid_double_complex *)&x)
-#define from_liquid_double_complex(x) (vdsp__ComplexF64)(*(vdsp__ComplexF64 *)&x)
+#define from_liquid_double_complex(x) (vldsp__ComplexF64)(*(vldsp__ComplexF64 *)&x)
 
 fn C.to_liquid_float_complex(x ComplexF32) C.liquid_float_complex
 fn C.to_liquid_float_complex_ptr(x ComplexF32) &C.liquid_float_complex

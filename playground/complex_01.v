@@ -2,11 +2,11 @@
 
 module main
 
-import vdsp
+import vldsp
 
 fn main() {
-	z1 := vdsp.float_complex(2.0, 3.0)
-	z2 := vdsp.float_complex(2.2, -.5)
+	z1 := vldsp.float_complex(2.0, 3.0)
+	z2 := vldsp.float_complex(2.2, -.5)
 
 	z3 := z1 + z2
 

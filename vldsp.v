@@ -1,6 +1,6 @@
 // Copyright(C) 2021 Erdet Nasufi. All rights reserved. MIT License.
 
-module vdsp
+module vldsp
 
 #flag -I /usr/include
 #flag -I /usr/include/x86_64-linux-gnu

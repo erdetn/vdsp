@@ -1,6 +1,6 @@
 // Copyright(C) 2021 Erdet Nasufi. All rights reserved. MIT License.
 
-module vdsp
+module vldsp
 
 // float  = f32
 // double = f64

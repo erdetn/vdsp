@@ -1,5 +1,5 @@
-# vdsp
-vdsp is a wrapepr of liquid-dsp (liquid-sdr)
+# vldsp
+vldsp is a wrapepr of liquid-dsp (liquid-sdr)
 
 
 ## Install
